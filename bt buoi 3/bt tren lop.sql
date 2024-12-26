@@ -55,14 +55,14 @@ HAVING COUNT(*) >= 3;
 -- 11. Lấy ra người nam (gender = ‘Male’) có lương (salary) cao nhất
 SELECT *
 FROM Person
-WHERE gender = 'Male'
-  AND salary = (SELECT MAX(salary) FROM Person WHERE gender = 'Male');
+WHERE gender = 'M'
+  AND salary = (SELECT MAX(salary) FROM Person WHERE gender = 'M');
 
 -- 12. Lấy ra người nữ (gender = ‘Female’) có lương (salary) thấp nhất
 SELECT *
 FROM Person
-WHERE gender = 'Female'
-  AND salary = (SELECT MIN(salary) FROM Person WHERE gender = 'Female');
+WHERE gender = 'F'
+  AND salary = (SELECT MIN(salary) FROM Person WHERE gender = 'F');
 
 -- 13. Lấy danh sách người (không trùng lặp) theo thứ tự tên đầy đủ tăng dần
 SELECT DISTINCT fullname
