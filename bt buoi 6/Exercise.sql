@@ -105,3 +105,7 @@ WHERE category.name = 'Action';
 -- 17. How many of the customers made a rental?
 SELECT COUNT(DISTINCT customer_id) AS customers_with_rentals
 FROM rental;
+
+SELECT 
+    (SELECT COUNT(film_id) FROM film_category GROUP BY category_id ORDER BY COUNT(film_id) DESC LIMIT 1) AS max_film_count,
+    (SELECT COUNT(film_id) FROM film_category GROUP BY category_id ORDER BY COUNT(film_id) ASC LIMIT 1) AS min_film_count;
